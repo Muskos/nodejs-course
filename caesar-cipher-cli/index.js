@@ -10,7 +10,9 @@ process.on('exit', code => {
 process.on('uncaughtException', error => {
   const errorCode = error.toString().substring(7);
 
-  console.error(statusMessage[errorCode]);
+  if (statusMessage[errorCode]) {
+    console.error(statusMessage[errorCode]);
+  }
   /* eslint no-process-exit: "off"*/
   process.exit(errorCode);
 });

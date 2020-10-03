@@ -32,7 +32,7 @@ class App {
         : process.stdout,
       err => {
         if (err) {
-          throw new Error(status.READ_WRITE);
+          throw new Error(err);
         }
       }
     );
